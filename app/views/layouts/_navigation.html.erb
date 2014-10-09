@@ -1,0 +1,13 @@
+<%# navigation styled for Bootstrap 3.0 %>
+
+<nav class="navbar navbar-default navbar-fixed-top tallnav" role="navigation">
+
+  <nav class="navbar-right nobullet">
+        <% if user_signed_in? %>
+            <li><%= link_to "Logout", destroy_user_session_path, :method => :delete, :class=>"tallnav" %></li>
+        <% else %>
+            <li><%= link_to "Login", new_user_session_path, :class=>"tallnav" %></li>
+        <% end %>
+  </nav>
+
+</nav>

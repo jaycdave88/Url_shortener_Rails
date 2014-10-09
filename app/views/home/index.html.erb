@@ -1,0 +1,16 @@
+<h1> Url Shortener </h1>
+<h2>Rails app</h2>
+<% if user_signed_in? %>
+  <form action="urls/new" method='post'>
+    <input type="url" name="long_url" >
+    <input type="submit" value="Submit">
+  </form>
+
+  <% @urls.each_with_index do |url,index| %>
+  <ul>
+
+    <li><%="#{index+1}:"%><a href="/urls/<%=url.short_url%>"><%= url.short_url %></a></li>
+
+  </ul>
+  <% end %>
+<% end %>
